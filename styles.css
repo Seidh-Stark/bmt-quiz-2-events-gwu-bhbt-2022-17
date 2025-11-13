@@ -3,7 +3,6 @@
  */
 
 /* Base Colors and Theming */
-/* Define color palettes for light and dark themes */
 :root {
     /* Light Mode Defaults */
     --color-background: #ffffff;
@@ -16,7 +15,6 @@
     --color-button-bg: #e0e0e6;
     --color-button-text: var(--color-text-primary);
     --color-hover-bg: #d0d0d8;
-    --font-family: 'Inter', sans-serif;
 
     /* Type-specific colors (for flair) */
     --type-keynote: #f59e0b; /* Amber */
@@ -24,27 +22,6 @@
     --type-workshop: #3b82f6; /* Blue */
     --type-panel: #8b5cf6; /* Violet */
     --type-social: #f43f5e; /* Rose */
-    /* Light Theme Colors */
-    --background-light: #f0f4f8;
-    --header-footer-bg-light: #ffffff;
-    --text-color-light: #102a43;
-    --card-bg-light: #ffffff;
-    --shadow-light: 0 4px 6px rgba(0, 0, 0, 0.1);
-    --button-bg-light: #3b82f6;
-    --button-text-light: #ffffff;
-    --button-hover-bg-light: #2563eb;
-    --filter-active-bg-light: #1e40af;
-
-    /* Dark Theme Colors */
-    --background-dark: #0f172a;
-    --header-footer-bg-dark: #1e293b;
-    --text-color-dark: #f8fafc;
-    --card-bg-dark: #334155;
-    --shadow-dark: 0 4px 6px rgba(0, 0, 0, 0.4);
-    --button-bg-dark: #60a5fa;
-    --button-text-dark: #0f172a;
-    --button-hover-bg-dark: #93c5fd;
-    --filter-active-bg-dark: #3b82f6;
 }
 
 /* Dark Mode Overrides (Controlled by JS/localStorage) */
@@ -59,17 +36,6 @@ html[data-theme='dark'] {
     --color-button-bg: #3a3a3c;
     --color-button-text: #ffffff;
     --color-hover-bg: #4a4a4c;
-/* Apply theme colors using CSS variables */
-[data-theme='light'] {
-    --bg-color: var(--background-light);
-    --header-footer-bg: var(--header-footer-bg-light);
-    --text-color: var(--text-color-light);
-    --card-bg: var(--card-bg-light);
-    --shadow: var(--shadow-light);
-    --button-bg: var(--button-bg-light);
-    --button-text: var(--button-text-light);
-    --button-hover-bg: var(--button-hover-bg-light);
-    --filter-active-bg: var(--filter-active-bg-light);
 }
 
 /* Basic Reset */
@@ -77,16 +43,6 @@ html[data-theme='dark'] {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-[data-theme='dark'] {
-    --bg-color: var(--background-dark);
-    --header-footer-bg: var(--header-footer-bg-dark);
-    --text-color: var(--text-color-dark);
-    --card-bg: var(--card-bg-dark);
-    --shadow: var(--shadow-dark);
-    --button-bg: var(--button-bg-dark);
-    --button-text: var(--button-text-dark);
-    --button-hover-bg: var(--button-hover-bg-dark);
-    --filter-active-bg: var(--filter-active-bg-dark);
 }
 
 /* Base Body and Typography (Level 1) */
@@ -96,37 +52,17 @@ body {
     color: var(--color-text-primary);
     line-height: 1.6;
     transition: background-color 0.4s ease, color 0.4s ease; /* Smooth theme transition */
-    font-family: var(--font-family);
-    background-color: var(--bg-color);
-    color: var(--text-color);
-    margin: 0;
-    transition: background-color 0.3s, color 0.3s;
-    overflow-x: hidden; /* Hide horizontal scrollbar */
 }
 
 h1, h2, h3, h4, h5 {
     font-weight: 700;
     line-height: 1.2;
-/* Animated Background */
-.background-animation {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: -1;
-    background: linear-gradient(45deg, #3b82f6, #8b5cf6, #ec4899, #f59e0b);
-    background-size: 400% 400%;
-    animation: gradient-animation 15s ease infinite;
-    opacity: 0.15;
 }
 
 main {
     max-width: 1200px;
     margin: 0 auto;
     padding: 20px;
-[data-theme='dark'] .background-animation {
-    opacity: 0.25;
 }
 
 /*
@@ -136,17 +72,6 @@ header {
     background-color: var(--color-card-background);
     border-bottom: 1px solid var(--color-border);
     padding: 20px;
-@keyframes gradient-animation {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
-}
-
-/* General Styles */
-header, footer {
-    background-color: var(--header-footer-bg);
-    padding: 1rem 2rem;
-    box-shadow: var(--shadow);
 }
 
 .header-content {
@@ -161,8 +86,6 @@ header h1 {
     font-size: 1.8rem;
     color: var(--color-accent);
     font-weight: 900;
-main {
-    padding: 2rem;
 }
 
 footer {
@@ -177,15 +100,11 @@ footer {
 /*
  * Theme Toggle Button (Level 3)
  */
-/* Theme Toggle Button */
 #theme-toggle {
     background: var(--color-button-bg);
     border: none;
     padding: 8px 12px;
     border-radius: 8px;
-    background: none;
-    border: 2px solid var(--text-color);
-    border-radius: 20px;
     cursor: pointer;
     font-size: 1.2rem;
     transition: background 0.3s;
@@ -210,48 +129,35 @@ html[data-theme='dark'].moon-icon { display: inline-block; }
 }
 
 .search-and-filter-bar {
-    padding: 0.5rem;
-    position: relative;
-    width: 50px;
-    height: 28px;
     display: flex;
     flex-direction: column;
     gap: 15px;
     margin-bottom: 30px;
-    align-items: center;
-    justify-content: space-between;
 }
 
 #event-search {
     width: 100%;
     padding: 12px 15px;
-#theme-toggle .sun-icon, #theme-toggle .moon-icon {
     font-size: 1rem;
     border: 1px solid var(--color-border);
     border-radius: 8px;
     background-color: var(--color-card-background);
     color: var(--color-text-primary);
     transition: border-color 0.3s;
-    transition: opacity 0.3s ease;
 }
 
 #event-search:focus {
     outline: none;
     border-color: var(--color-accent);
     box-shadow: 0 0 0 3px rgba(0, 122, 255, 0.2);
-[data-theme='light'] .moon-icon {
-    opacity: 0;
 }
 
 .filter-buttons {
     display: flex;
     flex-wrap: wrap;
     gap: 10px;
-[data-theme='dark'] .sun-icon {
-    opacity: 0;
 }
 
-/* Add other styles for your page elements like cards, inputs, etc. */
 .filter-btn {
     padding: 8px 16px;
     border: 1px solid var(--color-border);
@@ -261,9 +167,6 @@ html[data-theme='dark'].moon-icon { display: inline-block; }
     font-size: 0.9rem;
     cursor: pointer;
     transition: background-color 0.3s, border-color 0.3s, color 0.3s;
-    background-color: var(--button-bg);
-    color: var(--button-text);
-    /* ... other styles */
 }
 
 .filter-btn:hover:not(.active) {
@@ -275,7 +178,6 @@ html[data-theme='dark'].moon-icon { display: inline-block; }
     color: white;
     border-color: var(--color-accent);
     font-weight: 700;
-    background-color: var(--filter-active-bg);
 }
 
 .filter-btn:focus-visible, #theme-toggle:focus-visible {
