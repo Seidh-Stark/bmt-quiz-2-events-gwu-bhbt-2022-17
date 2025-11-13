@@ -1,0 +1,217 @@
+/* styles/main.css */
+
+/* --- Root Variables for Theming --- */
+:root {
+    --background-color: #f4f7f6;
+    --text-color: #333;
+    --card-bg-color: #ffffff;
+    --header-bg-color: #2c3e50;
+    --header-text-color: #ecf0f1;
+    --accent-color: #3498db;
+    --shadow-color: rgba(0, 0, 0, 0.1);
+    --font-body: 'Roboto', sans-serif;
+    --font-display: 'Orbitron', sans-serif;
+}
+
+/* --- Dark Mode Theme --- */
+body.dark-mode {
+    --background-color: #1a1a1a;
+    --text-color: #f1f1f1;
+    --card-bg-color: #2c2c2c;
+    --header-bg-color: #121212;
+    --header-text-color: #ecf0f1;
+    --accent-color: #5dade2;
+    --shadow-color: rgba(0, 0, 0, 0.4);
+}
+
+/* --- General Body Styling --- */
+body {
+    font-family: var(--font-body);
+    background-color: var(--background-color);
+    color: var(--text-color);
+    margin: 0;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+/* --- Header --- */
+header {
+    background-color: var(--header-bg-color);
+    color: var(--header-text-color);
+    padding: 1rem 2rem;
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header h1 {
+    font-family: var(--font-display);
+    margin: 0;
+}
+
+/* --- Main Content --- */
+main {
+    padding: 2rem;
+}
+
+/* --- Filter Buttons --- */
+#filter-container {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 2rem;
+}
+
+.filter-btn {
+    padding: 10px 20px;
+    border: 2px solid var(--accent-color);
+    background-color: transparent;
+    color: var(--accent-color);
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.filter-btn:hover, .filter-btn.active {
+    background-color: var(--accent-color);
+    color: white;
+}
+
+/* --- Event Grid Container --- */
+#event-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    justify-content: center;
+}
+
+/* --- Event Card Styling --- */
+.event-card {
+    background-color: var(--card-bg-color);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px var(--shadow-color);
+    overflow: hidden;
+    width: 320px;
+    transition: transform 0.3s, box-shadow 0.3s;
+    display: flex;
+    flex-direction: column;
+}
+
+.event-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 24px var(--shadow-color);
+}
+
+.event-card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+
+.event-card-content {
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.event-card h2 {
+    font-family: var(--font-display);
+    font-size: 1.25rem;
+    margin: 0 0 0.5rem 0;
+    color: var(--accent-color);
+}
+
+.event-type {
+    background-color: var(--accent-color);
+    color: white;
+    padding: 0.2rem 0.5rem;
+    border-radius: 5px;
+    font-size: 0.8rem;
+    align-self: flex-start;
+    margin-bottom: 0.5rem;
+}
+
+.event-card p {
+    flex-grow: 1;
+    line-height: 1.6;
+}
+
+/* --- Countdown Timer --- */
+.countdown {
+    font-family: var(--font-display);
+    font-size: 1.1rem;
+    color: var(--accent-color);
+    text-align: center;
+    padding: 0.5rem 0;
+    margin-top: auto;
+}
+
+/* --- Footer --- */
+footer {
+    text-align: center;
+    padding: 1rem;
+    margin-top: 2rem;
+    background-color: var(--header-bg-color);
+    color: var(--header-text-color);
+}
+
+/* --- Dark Mode Toggle Switch --- */
+.theme-switch-wrapper {
+    display: flex;
+    align-items: center;
+}
+.theme-switch {
+    display: inline-block;
+    height: 34px;
+    position: relative;
+    width: 60px;
+}
+.theme-switch input {
+    display:none;
+}
+.slider {
+    background-color: #ccc;
+    bottom: 0;
+    cursor: pointer;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    transition: .4s;
+}
+.slider:before {
+    background-color: #fff;
+    bottom: 4px;
+    content: "";
+    height: 26px;
+    left: 4px;
+    position: absolute;
+    transition: .4s;
+    width: 26px;
+}
+input:checked + .slider {
+    background-color: var(--accent-color);
+}
+input:checked + .slider:before {
+    transform: translateX(26px);
+}
+.slider.round {
+    border-radius: 34px;
+}
+.slider.round:before {
+    border-radius: 50%;
+}
+
+/* --- Responsive Layout --- */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    #event-container {
+        flex-direction: column;
+        align-items: center;
+    }
+}
