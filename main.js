@@ -166,13 +166,36 @@ function formatEventDate(dateString) {
 }
 
 /**
- * Renders all events into the event container.
+ * Renders events into the container based on current filters.
+ * @param {string} searchTerm - The text to filter by.
+ * @param {string} filterType - The event type to filter by.
  */
-function renderEvents() {
+function renderEvents(searchTerm = '', filterType = 'all') {
     const eventContainer = document.getElementById('event-container');
-    if (!eventContainer) return;
+    const noResults = document.getElementById('no-results');
+    if (!eventContainer || !noResults) return;
 
-    events.forEach(event => {
+    eventContainer.innerHTML = ''; // Clear existing events
+
+    const lowerCaseSearchTerm = searchTerm.toLowerCase();
+
+    const filteredEvents = events
+        .filter(event => {
+            const matchesType = filterType === 'all' || event.type === filterType;
+            const matchesSearch = !searchTerm ||
+                event.title.toLowerCase().includes(lowerCaseSearchTerm) ||
+                event.description.toLowerCase().includes(lowerCaseSearchTerm);
+            return matchesType && matchesSearch;
+        })
+        .sort((a, b) => new Date(a.date) - new Date(b.date)); // Sort events by date
+
+    if (filteredEvents.length === 0) {
+        noResults.classList.remove('hidden');
+    } else {
+        noResults.classList.add('hidden');
+    }
+
+    filteredEvents.forEach(event => {
         const card = document.createElement('div');
         card.className = 'event-card';
 
@@ -191,5 +214,33 @@ function renderEvents() {
     });
 }
 
-// Render the events when the DOM is fully loaded.
-document.addEventListener('DOMContentLoaded', renderEvents);
+/**
+ * Sets up all event listeners for the page.
+ */
+function setupEventListeners() {
+    const searchInput = document.getElementById('event-search');
+    const filterButtons = document.querySelectorAll('.filter-btn');
+
+    let currentFilter = 'all';
+    let currentSearch = '';
+
+    searchInput.addEventListener('input', (e) => {
+        currentSearch = e.target.value;
+        renderEvents(currentSearch, currentFilter);
+    });
+
+    filterButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            filterButtons.forEach(btn => btn.classList.remove('active'));
+            button.classList.add('active');
+            currentFilter = button.getAttribute('data-filter');
+            renderEvents(currentSearch, currentFilter);
+        });
+    });
+}
+
+// Initial render and setup when the DOM is fully loaded.
+document.addEventListener('DOMContentLoaded', () => {
+    renderEvents();
+    setupEventListeners();
+});
