@@ -5,35 +5,35 @@ const events = [
         type: "Keynote",
         date: "2025-11-20T09:00:00",
         description: "Join industry visionary Dr. Evelyn Reed as she unveils the next decade of AI innovation.",
-        image: "https://placehold.co/600x400/334155/E2E8F0?text=Future+of+AI"
+        image: "https://picsum.photos/id/10/600/400"
     },
     {
         title: "Advanced JavaScript Workshop",
         type: "Workshop",
         date: "2025-11-20T10:30:00",
         description: "A 3-hour, hands-on deep-dive into asynchronous JavaScript, Promises, and modern ES6+ features.",
-        image: "https://placehold.co/600x400/f59e0b/ffffff?text=Advanced+JS"
+        image: "https://picsum.photos/id/11/600/400"
     },
     {
         title: "Cybersecurity in the Cloud Era",
         type: "Talk",
         date: "2025-11-20T11:00:00",
         description: "Explore the evolving landscape of cloud security threats and proactive defense strategies.",
-        image: "https://placehold.co/600x400/1e293b/94a3b8?text=Cloud+Security"
+        image: "https://picsum.photos/id/42/600/400"
     },
     {
         title: "Introduction to Quantum Computing",
         type: "Talk",
         date: "2025-11-20T14:00:00",
         description: "A beginner-friendly overview of quantum mechanics and its potential to revolutionize computing.",
-        image: "https://placehold.co/600x400/4c1d95/f5d0fe?text=Quantum+Computing"
+        image: "https://picsum.photos/id/13/600/400"
     },
     {
         title: "Networking Mixer & Welcome Reception",
         type: "Social",
         date: "2025-11-20T17:00:00",
         description: "Connect with fellow attendees, speakers, and sponsors over drinks and appetizers.",
-        image: "https://placehold.co/600x400/f43f5e/ffffff?text=Networking+Mixer"
+        image: "https://picsum.photos/id/101/600/400"
     },
 
     // --- Day 2: Nov 21, 2025 ---
@@ -42,35 +42,35 @@ const events = [
         type: "Talk",
         date: "2025-11-21T09:30:00",
         description: "A critical discussion on the societal impact and ethical responsibilities in ML development.",
-        image: "https://placehold.co/600x400/1e293b/94a3b8?text=ML+Ethics"
+        image: "https://picsum.photos/id/16/600/400"
     },
     {
         title: "Building Scalable Web Apps with Microservices",
         type: "Talk",
         date: "2025-11-21T10:30:00",
         description: "Learn the principles of microservices from lead engineers at a top tech company.",
-        image: "https://placehold.co/600x400/1e293b/94a3b8?text=Microservices"
+        image: "https://picsum.photos/id/17/600/400"
     },
     {
         title: "Mastering React Performance",
         type: "Workshop",
         date: "2025-11-21T13:00:00",
         description: "Optimize your React applications by learning memoization, code splitting, and bundle analysis.",
-        image: "https://placehold.co/600x400/3b82f6/ffffff?text=React+Performance"
+        image: "https://picsum.photos/id/18/600/400"
     },
     {
         title: "The Psychology of User Experience (UX)",
         type: "Talk",
         date: "2025-11-21T14:00:00",
         description: "Understand the cognitive biases and psychological principles that drive effective UX design.",
-        image: "https://placehold.co/600x400/1e293b/94a3b8?text=Psychology+of+UX"
+        image: "https://picsum.photos/id/20/600/400"
     },
     {
         title: "Panel: The Future of Remote Work in Tech",
         type: "Panel",
         date: "2025-11-21T16:00:00",
         description: "Industry leaders discuss the challenges, tools, and culture of building successful remote-first teams.",
-        image: "https://placehold.co/600x400/8b5cf6/ffffff?text=Remote+Work+Panel"
+        image: "https://picsum.photos/id/21/600/400"
     },
 
     // --- Day 3: Nov 22, 2025 ---
@@ -79,35 +79,35 @@ const events = [
         type: "Workshop",
         date: "2025-11-22T09:00:00",
         description: "A practical workshop on visual hierarchy, color theory, and typography that every developer should know.",
-        image: "https://placehold.co/600x400/3b82f6/ffffff?text=UI/UX+Design"
+        image: "https://picsum.photos/id/22/600/400"
     },
     {
         title: "From Monolith to Serverless",
         type: "Talk",
         date: "2025-11-22T10:00:00",
         description: "A case study on migrating a large-scale legacy application to a modern serverless architecture.",
-        image: "https://placehold.co/600x400/1e293b/94a3b8?text=Monolith+to+Serverless"
+        image: "https://picsum.photos/id/23/600/400"
     },
     {
         title: "State of Web Assembly in 2025",
         type: "Talk",
         date: "2025-11-22T11:30:00",
         description: "Discover how WebAssembly is enabling near-native performance for web applications.",
-        image: "https://placehold.co/600x400/1e293b/94a3b8?text=Web+Assembly"
+        image: "https://picsum.photos/id/24/600/400"
     },
     {
         title: "Data Visualization with D3.js",
         type: "Workshop",
         date: "2025-11-22T13:30:00",
         description: "Learn to create stunning, interactive data visualizations for the web from scratch.",
-        image: "https://placehold.co/600x400/3b82f6/ffffff?text=Data+Viz+with+D3"
+        image: "https://picsum.photos/id/25/600/400"
     },
     {
         title: "Closing Panel: Ask Me Anything with Speakers",
         type: "Panel",
         date: "2025-11-22T16:00:00",
         description: "An open Q&A session with a panel of the conference's top speakers. No topic is off-limits!",
-        image: "https://placehold.co/600x400/8b5cf6/ffffff?text=AMA+Panel"
+        image: "https://picsum.photos/id/26/600/400"
     },
 
     // --- Bonus / Past Events for testing ---
@@ -116,35 +116,35 @@ const events = [
         type: "Social",
         date: "2025-11-19T09:00:00",
         description: "A 24-hour coding challenge with prizes for the most innovative projects. Kicks off before the main event.",
-        image: "https://placehold.co/600x400/f43f5e/ffffff?text=Hackathon"
+        image: "https://picsum.photos/id/27/600/400"
     },
     {
         title: "API Design Best Practices",
         type: "Talk",
         date: "2025-11-21T15:00:00",
         description: "Learn how to design, document, and maintain clean, consistent, and easy-to-use RESTful APIs.",
-        image: "https://placehold.co/600x400/1e293b/94a3b8?text=API+Design"
+        image: "https://picsum.photos/id/28/600/400"
     },
     {
         title: "DevOps Culture and Tooling",
         type: "Talk",
         date: "2025-11-20T15:30:00",
         description: "An introduction to the principles of DevOps and the tools that enable continuous integration and deployment.",
-        image: "https://placehold.co/600x400/1e293b/94a3b8?text=DevOps+Culture"
+        image: "https://picsum.photos/id/29/600/400"
     },
     {
         title: "Mobile-First Design in Practice",
         type: "Workshop",
         date: "2025-11-20T13:00:00",
         description: "A hands-on session focusing on practical techniques for designing and building mobile-first responsive websites.",
-        image: "https://placehold.co/600x400/3b82f6/ffffff?text=Mobile-First+Design"
+        image: "https://picsum.photos/id/30/600/400"
     },
     {
         title: "Closing Ceremony & Awards",
         type: "Social",
         date: "2025-11-22T17:30:00",
         description: "Join us as we celebrate the best of the conference and announce the hackathon winners.",
-        image: "https://placehold.co/600x400/f43f5e/ffffff?text=Awards+Ceremony"
+        image: "https://picsum.photos/id/31/600/400"
     }
 ];
 

@@ -306,6 +306,12 @@ footer {
     font-size: 1.4rem;
 }
 
+/* Card Actions Animation on Hover */
+.card-actions {
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    opacity: 0;
+    transform: translateY(10px);
+}
 /* Responsive Media Queries */
 @media (min-width: 768px) {
     #event-container { grid-template-columns: 1fr 1fr; }
@@ -313,4 +319,9 @@ footer {
 }
 @media (min-width: 1024px) {
     #event-container { grid-template-columns: 1fr 1fr 1fr; }
+}
+
+.event-card:hover .card-actions {
+    opacity: 1;
+    transform: translateY(0);
 }
