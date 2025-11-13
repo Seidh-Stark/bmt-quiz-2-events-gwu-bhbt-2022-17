@@ -36,7 +36,7 @@
         <section id="controls-section">
             <div class="search-and-filter-bar">
                 <input type="text" id="event-search" placeholder="Search events by title or description..." aria-label="Search events">
-
+    
                 <div class="filter-buttons">
                     <button class="filter-btn active" data-filter="all" tabindex="0" role="button">All Events</button>
                     <button class="filter-btn" data-filter="Keynote" tabindex="0" role="button">Keynotes</button>
@@ -48,7 +48,7 @@
             </div>
         </section>
 
-        <section id="event-container">
+        <section id="event-container" aria-live="polite">
             </section>
         
         <p id="no-results" class="hidden" aria-live="polite" role="status">
@@ -58,7 +58,7 @@
     </main>
 
     <footer>
-        <p>&copy; 2025 TechCon. All rights reserved. Developed by.</p>
+        <p>&copy; 2025 TechCon. All rights reserved.</p>
     </footer>
 
     <script src="main.js"></script>
