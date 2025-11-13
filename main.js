@@ -149,6 +149,39 @@ const events = [
 ];
 
 /**
+ * Global timer interval for countdowns.
+ */
+let countdownInterval;
+
+/**
+ * Converts a date string to a UTC format required for Google Calendar links.
+ * e.g., 20251120T090000Z
+ * @param {string} dateString - The ISO date string.
+ * @returns {string} A formatted UTC date string.
+ */
+function toUTCString(dateString) {
+    const date = new Date(dateString);
+    return date.toISOString().replace(/-|:|\.\d{3}/g, '');
+}
+
+/**
+ * Generates a Google Calendar link for an event.
+ * @param {object} event - The event object.
+ * @returns {string} A URL for adding the event to Google Calendar.
+ */
+function createGoogleCalendarLink(event) {
+    const startTime = toUTCString(event.date);
+    // Assuming a 1-hour duration for simplicity
+    const endTime = toUTCString(new Date(new Date(event.date).getTime() + 60 * 60 * 1000));
+    const url = new URL('https://www.google.com/calendar/render');
+    url.searchParams.append('action', 'TEMPLATE');
+    url.searchParams.append('text', event.title);
+    url.searchParams.append('dates', `${startTime}/${endTime}`);
+    url.searchParams.append('details', event.description);
+    return url.href;
+}
+
+/**
  * Formats a date string into a more readable format.
  * @param {string} dateString - The ISO date string.
  * @returns {string} A formatted date and time string.
@@ -175,6 +208,9 @@ function renderEvents(searchTerm = '', filterType = 'all') {
     const noResults = document.getElementById('no-results');
     if (!eventContainer || !noResults) return;
 
+    // Clear any existing countdown timers before re-rendering
+    if (countdownInterval) clearInterval(countdownInterval);
+
     eventContainer.innerHTML = ''; // Clear existing events
 
     const lowerCaseSearchTerm = searchTerm.toLowerCase();
@@ -195,23 +231,71 @@ function renderEvents(searchTerm = '', filterType = 'all') {
         noResults.classList.add('hidden');
     }
 
-    filteredEvents.forEach(event => {
+    filteredEvents.forEach((event, index) => {
         const card = document.createElement('div');
         card.className = 'event-card';
+        const calendarLink = createGoogleCalendarLink(event);
 
         card.innerHTML = `
             <img src="${event.image}" alt="${event.title}">
             <div class="event-card-content">
                 <div class="event-meta">
                     <span>${formatEventDate(event.date)}</span>
-                    <span class="event-type">${event.type}</span>
+                    <span class="event-type type-${event.type.toLowerCase()}">${event.type}</span>
                 </div>
                 <h2>${event.title}</h2>
                 <p>${event.description}</p>
+                <div class="card-actions">
+                    <div class="countdown-display" id="countdown-${index}" data-event-date="${event.date}">
+                        Loading countdown...
+                    </div>
+                    <a href="${calendarLink}" target="_blank" rel="noopener noreferrer" class="add-to-calendar-btn">
+                        Add to Calendar
+                    </a>
+                </div>
             </div>
         `;
         eventContainer.appendChild(card);
     });
+
+    // Start the new countdown timer
+    updateCountdowns();
+    countdownInterval = setInterval(updateCountdowns, 1000);
+}
+
+/**
+ * Updates all countdown timers on the page every second.
+ */
+function updateCountdowns() {
+    const countdownElements = document.querySelectorAll('.countdown-display');
+    const now = new Date().getTime();
+
+    countdownElements.forEach(el => {
+        const eventDate = new Date(el.dataset.eventDate).getTime();
+        const distance = eventDate - now;
+
+        if (distance < 0) {
+            el.innerHTML = "Event has ended";
+            return;
+        }
+
+        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+        el.innerHTML = `${days}d ${hours}h ${minutes}m ${seconds}s`;
+    });
+}
+
+/**
+ * Toggles the theme between 'light' and 'dark' and saves the preference.
+ */
+function toggleTheme() {
+    const currentTheme = document.documentElement.getAttribute('data-theme');
+    const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+    document.documentElement.setAttribute('data-theme', newTheme);
+    localStorage.setItem('theme', newTheme); // Persist user's choice
 }
 
 /**
@@ -220,6 +304,7 @@ function renderEvents(searchTerm = '', filterType = 'all') {
 function setupEventListeners() {
     const searchInput = document.getElementById('event-search');
     const filterButtons = document.querySelectorAll('.filter-btn');
+    const themeToggleButton = document.getElementById('theme-toggle');
 
     let currentFilter = 'all';
     let currentSearch = '';
@@ -237,6 +322,8 @@ function setupEventListeners() {
             renderEvents(currentSearch, currentFilter);
         });
     });
+
+    themeToggleButton.addEventListener('click', toggleTheme);
 }
 
 // Initial render and setup when the DOM is fully loaded.
