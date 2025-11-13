@@ -14,9 +14,7 @@
         const storedTheme = localStorage.getItem('theme');
         const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
         
-        if (storedTheme === 'dark' |
-
-| (!storedTheme && systemPrefersDark)) {
+        if (storedTheme === 'dark' || (!storedTheme && systemPrefersDark)) {
             document.documentElement.setAttribute('data-theme', 'dark');
         } else {
             document.documentElement.setAttribute('data-theme', 'light');
@@ -24,6 +22,7 @@
     </script>
 </head>
 <body>
+    <div class="background-animation"></div>
     <header>
         <div class="header-content">
             <h1>TechCon 2025: The Innovation Frontier</h1>
