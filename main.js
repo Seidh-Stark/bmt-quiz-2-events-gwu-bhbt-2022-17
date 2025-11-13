@@ -201,9 +201,10 @@ function formatEventDate(dateString) {
 /**
  * Renders events into the container based on current filters.
  * @param {string} searchTerm - The text to filter by.
+ * @param {string} dayFilter - The day to filter by ('all', '20', '21', '22').
  * @param {string} filterType - The event type to filter by.
  */
-function renderEvents(searchTerm = '', filterType = 'all') {
+function renderEvents(searchTerm = '', dayFilter = 'all', filterType = 'all') {
     const eventContainer = document.getElementById('event-container');
     const noResults = document.getElementById('no-results');
     if (!eventContainer || !noResults) return;
@@ -217,11 +218,13 @@ function renderEvents(searchTerm = '', filterType = 'all') {
 
     const filteredEvents = events
         .filter(event => {
+            const eventDay = new Date(event.date).getDate().toString();
+            const matchesDay = dayFilter === 'all' || eventDay === dayFilter;
             const matchesType = filterType === 'all' || event.type === filterType;
             const matchesSearch = !searchTerm ||
                 event.title.toLowerCase().includes(lowerCaseSearchTerm) ||
                 event.description.toLowerCase().includes(lowerCaseSearchTerm);
-            return matchesType && matchesSearch;
+            return matchesDay && matchesType && matchesSearch;
         })
         .sort((a, b) => new Date(a.date) - new Date(b.date)); // Sort events by date
 
@@ -304,22 +307,33 @@ function toggleTheme() {
 function setupEventListeners() {
     const searchInput = document.getElementById('event-search');
     const filterButtons = document.querySelectorAll('.filter-btn');
+    const dayTabs = document.querySelectorAll('.day-tab');
     const themeToggleButton = document.getElementById('theme-toggle');
 
+    let currentDay = 'all';
     let currentFilter = 'all';
     let currentSearch = '';
 
     searchInput.addEventListener('input', (e) => {
         currentSearch = e.target.value;
-        renderEvents(currentSearch, currentFilter);
+        renderEvents(currentSearch, currentDay, currentFilter);
+    });
+
+    dayTabs.forEach(tab => {
+        tab.addEventListener('click', () => {
+            dayTabs.forEach(t => t.classList.remove('active'));
+            tab.classList.add('active');
+            currentDay = tab.dataset.day;
+            renderEvents(currentSearch, currentDay, currentFilter);
+        });
     });
 
     filterButtons.forEach(button => {
         button.addEventListener('click', () => {
             filterButtons.forEach(btn => btn.classList.remove('active'));
             button.classList.add('active');
-            currentFilter = button.getAttribute('data-filter');
-            renderEvents(currentSearch, currentFilter);
+            currentFilter = button.dataset.filter;
+            renderEvents(currentSearch, currentDay, currentFilter);
         });
     });
 
@@ -328,6 +342,6 @@ function setupEventListeners() {
 
 // Initial render and setup when the DOM is fully loaded.
 document.addEventListener('DOMContentLoaded', () => {
-    renderEvents();
+    renderEvents('all', 'all', 'all');
     setupEventListeners();
 });

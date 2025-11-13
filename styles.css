@@ -117,6 +117,37 @@ footer {
     color: var(--text-secondary);
 }
 
+/* Day Tab Navigation */
+.day-tabs {
+    display: flex;
+    border-bottom: 1px solid var(--border-color);
+    margin-bottom: 1.5rem;
+    overflow-x: auto;
+}
+
+.day-tab {
+    padding: 0.75rem 1.5rem;
+    cursor: pointer;
+    background: none;
+    border: none;
+    color: var(--text-secondary);
+    font-size: 1rem;
+    font-weight: 500;
+    border-bottom: 3px solid transparent;
+    transition: color 0.3s, border-color 0.3s;
+    white-space: nowrap;
+}
+
+.day-tab:hover {
+    color: var(--text-primary);
+}
+
+.day-tab.active {
+    color: var(--accent-color);
+    border-bottom-color: var(--accent-color);
+    font-weight: 700;
+}
+
 /* --- Level 2: Event Filter & Controls --- */
 .search-and-filter-bar {
     display: flex;
