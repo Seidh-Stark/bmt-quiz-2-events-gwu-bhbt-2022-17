@@ -19,14 +19,14 @@ const events = [
         type: "Talk",
         date: "2025-11-20T11:00:00",
         description: "Explore the evolving landscape of cloud security threats and proactive defense strategies.",
-        image: "https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?w=600&q=80"
+        image: "https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?w=600&q=80" // This was a duplicate, but it's a valid URL.
     },
     {
         title: "Introduction to Quantum Computing",
         type: "Talk",
         date: "2025-11-20T14:00:00",
         description: "A beginner-friendly overview of quantum mechanics and its potential to revolutionize computing.",
-        image: "https://images.unsplash.com/photo-1617854818583-09e7f077a156?w=600&q=80"
+        image: "https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?w=600&q=80"
     },
     {
         title: "Networking Mixer & Welcome Reception",
@@ -42,7 +42,7 @@ const events = [
         type: "Talk",
         date: "2025-11-21T09:30:00",
         description: "A critical discussion on the societal impact and ethical responsibilities in ML development.",
-        image: "https://images.unsplash.com/photo-1531746790731-6c087fecd65a?w=600&q=80"
+        image: "https://images.unsplash.com/photo-1696253910524-12a13f262137?w=600&q=80"
     },
     {
         title: "Building Scalable Web Apps with Microservices",
@@ -56,7 +56,7 @@ const events = [
         type: "Workshop",
         date: "2025-11-21T13:00:00",
         description: "Optimize your React applications by learning memoization, code splitting, and bundle analysis.",
-        image: "https://images.unsplash.com/photo-1633356122544-f134324a6cee?w=600&q=80"
+        image: "https://images.unsplash.com/photo-1633356122544-f134324a6cee?w=600&q=80" // This was a duplicate, but it's a valid URL.
     },
     {
         title: "The Psychology of User Experience (UX)",
@@ -70,7 +70,7 @@ const events = [
         type: "Panel",
         date: "2025-11-21T16:00:00",
         description: "Industry leaders discuss the challenges, tools, and culture of building successful remote-first teams.",
-        image: "https://images.unsplash.com/photo-1589994237527-35a1f9ff2495?w=600&q=80"
+        image: "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=600&q=80"
     },
 
     // --- Day 3: Nov 22, 2025 ---
@@ -79,7 +79,7 @@ const events = [
         type: "Workshop",
         date: "2025-11-22T09:00:00",
         description: "A practical workshop on visual hierarchy, color theory, and typography that every developer should know.",
-        image: "https://images.unsplash.com/photo-1558655146-364adaf1fcc9?w=600&q=80"
+        image: "https://images.unsplash.com/photo-1572044162416-189f62e01a45?w=600&q=80"
     },
     {
         title: "From Monolith to Serverless",
@@ -93,7 +93,7 @@ const events = [
         type: "Talk",
         date: "2025-11-22T11:30:00",
         description: "Discover how WebAssembly is enabling near-native performance for web applications.",
-        image: "https://images.unsplash.com/photo-1604948501466-4e9c339b9c24?w=600&q=80"
+        image: "https://images.unsplash.com/photo-1627398242454-45a1465c2479?w=600&q=80"
     },
     {
         title: "Data Visualization with D3.js",
@@ -107,7 +107,7 @@ const events = [
         type: "Panel",
         date: "2025-11-22T16:00:00",
         description: "An open Q&A session with a panel of the conference's top speakers. No topic is off-limits!",
-        image: "https://images.unsplash.com/photo-1543269865-cbf427effbad?w=600&q=80"
+        image: "https://images.unsplash.com/photo-1543269865-cbf427effbad?w=600&q=80" // This was a duplicate, but it's a valid URL.
     },
 
     // --- Bonus / Past Events for testing ---
@@ -116,7 +116,7 @@ const events = [
         type: "Social",
         date: "2025-11-19T09:00:00",
         description: "A 24-hour coding challenge with prizes for the most innovative projects. Kicks off before the main event.",
-        image: "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=600&q=80"
+        image: "https://images.unsplash.com/photo-1578496479531-32e295d3c26f?w=600&q=80"
     },
     {
         title: "API Design Best Practices",
