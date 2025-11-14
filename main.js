@@ -33,7 +33,7 @@ const events = [
         type: "Social",
         date: "2025-11-20T17:00:00",
         description: "Connect with fellow attendees, speakers, and sponsors over drinks and appetizers.",
-        image: "https://images.unsplash.com/photo-1519167758481-83f550bb49b6?w=600&q=80"
+        image: "https://images.unsplash.com/photo-1528605248644-14dd04022da1?w=600&q=80"
     },
 
     // --- Day 2: Nov 21, 2025 ---
@@ -42,35 +42,35 @@ const events = [
         type: "Talk",
         date: "2025-11-21T09:30:00",
         description: "A critical discussion on the societal impact and ethical responsibilities in ML development.",
-        image: "https://images.unsplash.com/photo-1696253910524-12a13f262137?w=600&q=80"
+        image: "https://images.unsplash.com/photo-1531746790731-6c087fecd65a?w=600&q=80"
     },
     {
         title: "Building Scalable Web Apps with Microservices",
         type: "Talk",
         date: "2025-11-21T10:30:00",
         description: "Learn the principles of microservices from lead engineers at a top tech company.",
-        image: "https://images.unsplash.com/photo-1562412699-6394289d345f?w=600&q=80"
+        image: "https://images.unsplash.com/photo-1504208434309-cb69f4c42b1b?w=600&q=80"
     },
     {
         title: "Mastering React Performance",
         type: "Workshop",
         date: "2025-11-21T13:00:00",
         description: "Optimize your React applications by learning memoization, code splitting, and bundle analysis.",
-        image: "https://images.unsplash.com/photo-1617042375876-a13e36732a04?w=600&q=80"
+        image: "https://images.unsplash.com/photo-1633356122544-f134324a6cee?w=600&q=80"
     },
     {
         title: "The Psychology of User Experience (UX)",
         type: "Talk",
         date: "2025-11-21T14:00:00",
         description: "Understand the cognitive biases and psychological principles that drive effective UX design.",
-        image: "https://images.unsplash.com/photo-1581291518857-4e27b48ff24e?w=600&q=80"
+        image: "https://images.unsplash.com/photo-1557425529-b1ae9c141e7d?w=600&q=80"
     },
     {
         title: "Panel: The Future of Remote Work in Tech",
         type: "Panel",
         date: "2025-11-21T16:00:00",
         description: "Industry leaders discuss the challenges, tools, and culture of building successful remote-first teams.",
-        image: "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=600&q=80"
+        image: "https://images.unsplash.com/photo-1589994237527-35a1f9ff2495?w=600&q=80"
     },
 
     // --- Day 3: Nov 22, 2025 ---
@@ -79,35 +79,35 @@ const events = [
         type: "Workshop",
         date: "2025-11-22T09:00:00",
         description: "A practical workshop on visual hierarchy, color theory, and typography that every developer should know.",
-        image: "https://images.unsplash.com/photo-1572044162416-189f62e01a45?w=600&q=80"
+        image: "https://images.unsplash.com/photo-1558655146-364adaf1fcc9?w=600&q=80"
     },
     {
         title: "From Monolith to Serverless",
         type: "Talk",
         date: "2025-11-22T10:00:00",
         description: "A case study on migrating a large-scale legacy application to a modern serverless architecture.",
-        image: "https://images.unsplash.com/photo-1516192518150-0d8fee5425e3?w=600&q=80"
+        image: "https://images.unsplash.com/photo-1563289037-a69c5a519f0a?w=600&q=80"
     },
     {
         title: "State of Web Assembly in 2025",
         type: "Talk",
         date: "2025-11-22T11:30:00",
         description: "Discover how WebAssembly is enabling near-native performance for web applications.",
-        image: "https://images.unsplash.com/photo-1627398242454-45a1465c2479?w=600&q=80"
+        image: "https://images.unsplash.com/photo-1604948501466-4e9c339b9c24?w=600&q=80"
     },
     {
         title: "Data Visualization with D3.js",
         type: "Workshop",
         date: "2025-11-22T13:30:00",
         description: "Learn to create stunning, interactive data visualizations for the web from scratch.",
-        image: "https://images.unsplash.com/photo-1526666923127-b2970f64b422?w=600&q=80"
+        image: "https://images.unsplash.com/photo-1566576721346-d4a3b4eaeb55?w=600&q=80"
     },
     {
         title: "Closing Panel: Ask Me Anything with Speakers",
         type: "Panel",
         date: "2025-11-22T16:00:00",
         description: "An open Q&A session with a panel of the conference's top speakers. No topic is off-limits!",
-        image: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=600&q=80"
+        image: "https://images.unsplash.com/photo-1543269865-cbf427effbad?w=600&q=80"
     },
 
     // --- Bonus / Past Events for testing ---
@@ -116,35 +116,35 @@ const events = [
         type: "Social",
         date: "2025-11-19T09:00:00",
         description: "A 24-hour coding challenge with prizes for the most innovative projects. Kicks off before the main event.",
-        image: "https://images.unsplash.com/photo-1578496479531-32e295d3c26f?w=600&q=80"
+        image: "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=600&q=80"
     },
     {
         title: "API Design Best Practices",
         type: "Talk",
         date: "2025-11-21T15:00:00",
         description: "Learn how to design, document, and maintain clean, consistent, and easy-to-use RESTful APIs.",
-        image: "https://images.unsplash.com/photo-1556075798-4825dfaaf498?w=600&q=80"
+        image: "https://images.unsplash.com/photo-1521791136064-7986c2920216?w=600&q=80"
     },
     {
         title: "DevOps Culture and Tooling",
         type: "Talk",
         date: "2025-11-20T15:30:00",
         description: "An introduction to the principles of DevOps and the tools that enable continuous integration and deployment.",
-        image: "https://images.unsplash.com/photo-1580894732444-8ecded7948bf?w=600&q=80"
+        image: "https://images.unsplash.com/photo-1573495783079-52d7a230da93?w=600&q=80"
     },
     {
         title: "Mobile-First Design in Practice",
         type: "Workshop",
         date: "2025-11-20T13:00:00",
         description: "A hands-on session focusing on practical techniques for designing and building mobile-first responsive websites.",
-        image: "https://images.unsplash.com/photo-1559028006-448665bd7c22?w=600&q=80"
+        image: "https://images.unsplash.com/photo-1581287053822-fd7bf4f4bf3f?w=600&q=80"
     },
     {
         title: "Closing Ceremony & Awards",
         type: "Social",
         date: "2025-11-22T17:30:00",
         description: "Join us as we celebrate the best of the conference and announce the hackathon winners.",
-        image: "https://images.unsplash.com/photo-1527529482837-4698179dc6ce?w=600&q=80"
+        image: "https://images.unsplash.com/photo-1517486808906-6ca8b3f04846?w=600&q=80"
     }
 ];
 
