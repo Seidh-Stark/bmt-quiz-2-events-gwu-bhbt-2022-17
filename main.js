@@ -19,7 +19,7 @@ const events = [
         type: "Talk",
         date: "2025-11-20T11:00:00",
         description: "Explore the evolving landscape of cloud security threats and proactive defense strategies.",
-        image: "https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?w=600&q=80" // This was a duplicate, but it's a valid URL.
+        image: "https://images.unsplash.com/photo-1504639725590-34d0984388bd?w=600&q=80"
     },
     {
         title: "Introduction to Quantum Computing",
@@ -56,7 +56,7 @@ const events = [
         type: "Workshop",
         date: "2025-11-21T13:00:00",
         description: "Optimize your React applications by learning memoization, code splitting, and bundle analysis.",
-        image: "https://images.unsplash.com/photo-1633356122544-f134324a6cee?w=600&q=80" // This was a duplicate, but it's a valid URL.
+        image: "https://images.unsplash.com/photo-1617042375876-a13e36732a04?w=600&q=80"
     },
     {
         title: "The Psychology of User Experience (UX)",
@@ -107,7 +107,7 @@ const events = [
         type: "Panel",
         date: "2025-11-22T16:00:00",
         description: "An open Q&A session with a panel of the conference's top speakers. No topic is off-limits!",
-        image: "https://images.unsplash.com/photo-1543269865-cbf427effbad?w=600&q=80" // This was a duplicate, but it's a valid URL.
+        image: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=600&q=80"
     },
 
     // --- Bonus / Past Events for testing ---
