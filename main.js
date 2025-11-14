@@ -342,6 +342,6 @@ function setupEventListeners() {
 
 // Initial render and setup when the DOM is fully loaded.
 document.addEventListener('DOMContentLoaded', () => {
-    renderEvents('all', 'all', 'all');
+    renderEvents('', 'all', 'all');
     setupEventListeners();
 });
